@@ -1,12 +1,11 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-// Quality ranges and colors
 const qualityRanges = [
   { label: 'Poor', color: '#d32f2f', min: 0, max: 1 },
   { color: '#f57c00', min: 2, max: 3 },
   { color: '#fbc02d', min: 3, max: 4 },
-  { color: '#fff176', min: 4, max: 5 },       // New yellowish block
+  { color: '#fff176', min: 4, max: 5 },
   { color: '#cddc39', min: 6, max: 7 },
   { color: '#8bc34a', min: 7, max: 8 },
   { label: 'Good', color: '#388e3c', min: 9, max: 10 }

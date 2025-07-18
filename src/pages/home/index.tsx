@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
         <Typography variant="h4" component="h1" gutterBottom>
           Welcome to Our App
         </Typography>
-        <QualityIndex data={qualityIndexData} />
+        <QualityIndex value={6.5} />
       </Box>
     </Container>
   );

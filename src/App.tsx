@@ -8,6 +8,7 @@ import HomePage from './pages/home';
 import ProductsPage from './pages/products';
 import ProductDetailsPage from './pages/productDetails';
 import DashboardPage from './pages/dashboard';
+import LayoutWrapper from './components/layout';
 
 
 const navItems: NavItem[] = [
@@ -33,7 +34,6 @@ const theme = createTheme({
 
 const App: React.FC = () => {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
-
   const handleMenuClick = () => {
     setSideMenuOpen(true);
   };
@@ -51,15 +51,10 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Header navItems={navItems} onMenuClick={handleMenuClick} />
-        <SideMenu
-          open={sideMenuOpen}
-          onClose={handleSideMenuClose}
-          onLogout={handleLogout}
-        />
+      <Router>       
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LayoutWrapper/>}>
+          {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/home" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:id" element={<ProductDetailsPage />} />
@@ -67,6 +62,7 @@ const App: React.FC = () => {
           {/* <Route path="/about-us" element={<AboutUsPage />} /> */}
           <Route path="/dashboard" element={<DashboardPage />} />
           {/* <Route path="/user-profile" element={<UserProfilePage />} /> */}
+          </Route>
         </Routes>
       </Router>
     </ThemeProvider>
