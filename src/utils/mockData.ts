@@ -1,12 +1,11 @@
 import type { Product, QualityIndexData } from "../types";
-
 export const mockProducts: Product[] = [
   {
     id: 'product1',
     name: 'Tesla Model S',
     description: 'Luxury electric sedan with autopilot',
     price: 79990,
-    image: '/images/tesla-model-s.jpg',
+    image: 'images/tesla.jpg',
     qualityIndex: 92,
     features: ['Autopilot', 'Long Range', 'Ludicrous Mode']
   },

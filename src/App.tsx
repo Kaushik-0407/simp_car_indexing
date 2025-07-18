@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import type { NavItem } from './types';
 import Header from './components/header';
@@ -54,7 +54,7 @@ const App: React.FC = () => {
       <Router>       
         <Routes>
           <Route path="/" element={<LayoutWrapper/>}>
-          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:id" element={<ProductDetailsPage />} />

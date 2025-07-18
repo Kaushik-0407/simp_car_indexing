@@ -7,10 +7,6 @@ import { useNavigate } from 'react-router';
 
 const LayoutWrapper = () => {
     const [sideMenuOpen, setSideMenuOpen] = useState(false);
-    const navigate = useNavigate();
-    useEffect(()=>{
-      navigate('/dashboard')
-    },[])
     const handleMenuClick = () => {
       setSideMenuOpen(true);
     };

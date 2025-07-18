@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 interface SideMenuProps {
@@ -11,6 +11,7 @@ interface SideMenuProps {
 const SideMenu: React.FC<SideMenuProps> = ({ open, onClose, onLogout }) => {
   return (
     <Drawer anchor="left" open={open} onClose={onClose}>
+      <Box sx={{ width: 250 }} role="presentation">
       <List>
         <ListItem disablePadding>
           <ListItemButton onClick={onLogout}>
@@ -21,6 +22,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ open, onClose, onLogout }) => {
           </ListItemButton>
         </ListItem>
       </List>
+      </Box>
     </Drawer>
   );
 };
