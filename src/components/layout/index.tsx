@@ -4,6 +4,7 @@ import SideMenu from '../sideMenu';
 import type { NavItem } from '../../types';
 import Layout from './outlet';
 import { useNavigate } from 'react-router';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const LayoutWrapper = () => {
     const [sideMenuOpen, setSideMenuOpen] = useState(false);
@@ -28,6 +29,9 @@ const LayoutWrapper = () => {
         { label: 'Dashboard', path: '/dashboard' },
         { label: 'User Profile', path: '/user-profile' },
       ];
+      const theme = useTheme();
+      const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <React.Fragment>
          <Header navItems={navItems} onMenuClick={handleMenuClick} />
@@ -35,6 +39,8 @@ const LayoutWrapper = () => {
           open={sideMenuOpen}
           onClose={handleSideMenuClose}
           onLogout={handleLogout}
+          isMobile ={isMobile}
+          navItems ={navItems}
         /> 
         <Layout/>
     </React.Fragment>

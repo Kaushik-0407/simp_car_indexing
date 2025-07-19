@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Box, Grid, Chip, Divider, Alert } from '@mui/material';
 import { useProducts } from '../products/hook/useProducts';
+import QualityIndexChart from '../../components/qualityIndex';
 // import { useProducts } from '../../hooks/useProducts';
 
 const ProductDetailsPage: React.FC = () => {
@@ -25,7 +26,14 @@ const ProductDetailsPage: React.FC = () => {
             component="img"
             src={product.image}
             alt={product.name}
-            sx={{ width: '100%', borderRadius: 2, boxShadow: 3 }}
+            sx={{
+              width: '100%',
+              height: 300, // or any consistent height like 350, 400 etc.
+              objectFit: 'contain', // or 'cover' if you want to crop to fill the box
+              borderRadius: 2,
+              boxShadow: 3,
+              backgroundColor: '#f5f5f5' // helps avoid visual gaps for transparent PNGs
+            }}
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -50,10 +58,11 @@ const ProductDetailsPage: React.FC = () => {
             ))}
           </Box>
           
-          <Box sx={{ mt: 4, p: 3, bgcolor: 'background.paper', borderRadius: 2 }}>
-            <Typography variant="h6" gutterBottom>
+          <Box sx={{ mt: 4, p: 3 }}>
+            {/* <Typography variant="h6" gutterBottom>
               Quality Index: {product.qualityIndex}%
-            </Typography>
+            </Typography> */}
+            <QualityIndexChart value={product.qualityIndex}/>
           </Box>
         </Grid>
       </Grid>
