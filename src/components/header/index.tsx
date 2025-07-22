@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Box, Button, useMediaQuery, useTheme } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import type { NavItem } from '../../types';
@@ -17,7 +17,6 @@ const Header: React.FC<HeaderProps> = ({ navItems, onMenuClick}) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        {/* {isMobile && ( */}
           <IconButton
             edge="start"
             color="inherit"
@@ -27,7 +26,6 @@ const Header: React.FC<HeaderProps> = ({ navItems, onMenuClick}) => {
           >
             <MenuIcon />
           </IconButton>
-        {/* )} */}
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Simp Car Indexing
         </Typography>

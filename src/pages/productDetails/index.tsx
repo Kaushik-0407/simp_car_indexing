@@ -13,7 +13,7 @@ const ProductDetailsPage: React.FC = () => {
   if (!product) {
     return (
       <Container maxWidth="lg" sx={{ my: 4 }}>
-        <Alert severity="error">Product not found</Alert>
+        <Alert severity="info">Loading...</Alert>
       </Container>
     );
   }
@@ -59,9 +59,6 @@ const ProductDetailsPage: React.FC = () => {
           </Box>
           
           <Box sx={{ mt: 4, p: 3 }}>
-            {/* <Typography variant="h6" gutterBottom>
-              Quality Index: {product.qualityIndex}%
-            </Typography> */}
             <QualityIndexChart value={product.qualityIndex}/>
           </Box>
         </Grid>

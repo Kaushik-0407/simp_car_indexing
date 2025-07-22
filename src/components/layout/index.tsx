@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import Header from '../header'
 import SideMenu from '../sideMenu';
 import type { NavItem } from '../../types';
 import Layout from './outlet';
-import { useNavigate } from 'react-router';
 import { useMediaQuery, useTheme } from '@mui/material';
 
 const LayoutWrapper = () => {
@@ -19,7 +18,6 @@ const LayoutWrapper = () => {
     const handleLogout = () => {
       console.log('Logout clicked');
       setSideMenuOpen(false);
-      // Add actual logout logic here
     };
     const navItems: NavItem[] = [
         { label: 'Home', path: '/home' },

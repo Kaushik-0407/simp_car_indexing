@@ -15,7 +15,7 @@ export const useProducts = () => {
         // In a real app, this would be an actual API call
         // const response = await fetch('/api/products');
         // const data = await response.json();
-        await new Promise(resolve => setTimeout(resolve, 500)); // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 200)); // Simulate network delay
         setProducts(mockProducts);
         setLoading(false);
       } catch (err) {
