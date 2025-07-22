@@ -33,7 +33,7 @@ export const mockProducts: Product[] = [
     description: 'High-performance electric grand tourer',
     price: 99900,
     image: '/src/utils/images/audi-etron.jpg',
-    qualityIndex: 9,
+    qualityIndex: 10,
     features: ['Quattro AWD', 'Fast Charging', 'Virtual Cockpit']
   },
   {

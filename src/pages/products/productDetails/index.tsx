@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Box, Grid, Chip, Divider, Alert } from '@mui/material';
-import { useProducts } from '../products/hook/useProducts';
-import QualityIndexChart from '../../components/qualityIndex';
-import type { Product } from '../../types';
+import { useProducts } from '../hook/useProducts';
+import QualityIndexChart from '../../../components/qualityIndex';
+import type { Product } from '../../../types';
 
 const ProductDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();

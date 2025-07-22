@@ -17,10 +17,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         image={product.image}
         alt={product.name}
         sx={{
-          height: 200, // Consistent height for all images
-          width: '100%', // Ensures it fills horizontally
-          objectFit: 'contain', // Keeps aspect ratio, doesn't crop
-          backgroundColor: '#f5f5f5' // Optional: for transparent images
+          height: 200, 
+          width: '100%',
+          objectFit: 'contain',
+          backgroundColor: '#f5f5f5'
         }}
       />
       <CardContent sx={{ flexGrow: 1 }}>
