@@ -9,6 +9,9 @@ import ProductsPage from './pages/products';
 import ProductDetailsPage from './pages/productDetails';
 import DashboardPage from './pages/dashboard';
 import LayoutWrapper from './components/layout';
+import ContactUsPage from './pages/contact_us';
+import AboutUsPage from './pages/about_us';
+import UserProfilePage from './pages/user/userProfile';
 
 
 const navItems: NavItem[] = [
@@ -58,10 +61,10 @@ const App: React.FC = () => {
           <Route path="/home" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:id" element={<ProductDetailsPage />} />
-          {/* <Route path="/contact-us" element={<ContactUsPage />} /> */}
-          {/* <Route path="/about-us" element={<AboutUsPage />} /> */}
+          <Route path="/contact-us" element={<ContactUsPage />} /> 
+          <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          {/* <Route path="/user-profile" element={<UserProfilePage />} /> */}
+          <Route path="/user-profile" element={<UserProfilePage />} />
           </Route>
         </Routes>
       </Router>
