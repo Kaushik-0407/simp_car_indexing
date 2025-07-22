@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import { Container, Typography, Box, Grid, Chip, Divider, Alert } from '@mui/material';
 import { useProducts } from '../products/hook/useProducts';
 import QualityIndexChart from '../../components/qualityIndex';
-// import { useProducts } from '../../hooks/useProducts';
+import type { Product } from '../../types';
 
 const ProductDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { getProductById } = useProducts();
-  const product = getProductById(id || '');
+  const product:Product | undefined = getProductById(id || '');
 
   if (!product) {
     return (
@@ -28,11 +28,11 @@ const ProductDetailsPage: React.FC = () => {
             alt={product.name}
             sx={{
               width: '100%',
-              height: 300, // or any consistent height like 350, 400 etc.
-              objectFit: 'contain', // or 'cover' if you want to crop to fill the box
+              height: 300, 
+              objectFit: 'contain', 
               borderRadius: 2,
               boxShadow: 3,
-              backgroundColor: '#f5f5f5' // helps avoid visual gaps for transparent PNGs
+              backgroundColor: '#f5f5f5' 
             }}
           />
         </Grid>

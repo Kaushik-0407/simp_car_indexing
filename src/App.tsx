@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-import type { NavItem } from './types';
-import Header from './components/header';
-import SideMenu from './components/sideMenu';
 import HomePage from './pages/home';
 import ProductsPage from './pages/products';
 import ProductDetailsPage from './pages/productDetails';
@@ -12,16 +9,6 @@ import LayoutWrapper from './components/layout';
 import ContactUsPage from './pages/contact_us';
 import AboutUsPage from './pages/about_us';
 import UserProfilePage from './pages/user/userProfile';
-
-
-const navItems: NavItem[] = [
-  { label: 'Home', path: '/home' },
-  { label: 'Products', path: '/products' },
-  { label: 'Contact Us', path: '/contact-us' },
-  { label: 'About Us', path: '/about-us' },
-  { label: 'Dashboard', path: '/dashboard' },
-  { label: 'User Profile', path: '/user-profile' },
-];
 
 const theme = createTheme({
   palette: {
@@ -36,20 +23,6 @@ const theme = createTheme({
 });
 
 const App: React.FC = () => {
-  const [sideMenuOpen, setSideMenuOpen] = useState(false);
-  const handleMenuClick = () => {
-    setSideMenuOpen(true);
-  };
-
-  const handleSideMenuClose = () => {
-    setSideMenuOpen(false);
-  };
-
-  const handleLogout = () => {
-    console.log('Logout clicked');
-    setSideMenuOpen(false);
-    // Add actual logout logic here
-  };
 
   return (
     <ThemeProvider theme={theme}>
